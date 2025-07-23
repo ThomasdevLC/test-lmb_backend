@@ -1,5 +1,7 @@
 <?php
+require_once __DIR__ . '/../api/cors.php';
 require_once __DIR__ . '/../api/ClientAPI.php';
+
 
 header('Content-Type: application/json');
 
