@@ -1,11 +1,17 @@
 <?php
+require_once __DIR__ . '/../api/cors.php';
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
+
+require_once __DIR__ . '/../api/ClientAPI.php';
+
 /**
  *
  * Updates a client's information by ID.
  * Accepts only allowed fields. $allowedFields
  */
-require_once __DIR__ . '/../api/cors.php';
-require_once __DIR__ . '/../api/ClientAPI.php';
 
 header('Content-Type: application/json');
 
