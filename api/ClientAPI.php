@@ -17,7 +17,6 @@ function callApi($method, $endpoint, $data = null, $customHeaders = null): array
     $headers = $customHeaders ?? API_HEADERS;
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-    // Ne pas envoyer de body JSON pour les requêtes GET
     if ($data !== null && strtoupper($method) !== 'GET') {
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
     }
